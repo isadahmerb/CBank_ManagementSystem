@@ -14,6 +14,11 @@ typedef struct {
 Conta banco[MAX_CONTAS];
 int totalC = 0;
 
+void lb(){
+    int c;
+    while ((c = getchar()) != '\n' && c != EOF);
+}
+
 void criar_conta() {
     if (totalC >= MAX_CONTAS) {
         printf("Banco cheio!\n");
@@ -166,6 +171,7 @@ void deletarC(){
                     printf("0. Sair\n");
                     printf("Opcao: ");
                     scanf("%d", &opcao);
+                    while(getchar() != '\n');
 
                     switch(opcao) {
                         case 1: criar_conta(); break;
